@@ -10,7 +10,8 @@
     "promised-mongo": "*"
   },
   "engines": {
-    "node": "*"
+    "node": "*",
+    "npm": "*"
   },
   "devDependencies": {},
   "scripts": {
