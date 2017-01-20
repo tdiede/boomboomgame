@@ -25,8 +25,6 @@ app.get('/', function(req,res) {
 
 app.use('/client', express.static(__dirname + '/client'));
 
-app.set('port', process.env.PORT || 5000);
-
 server.listen(process.env.PORT || 2000);
 console.log('Server started...');
 
