@@ -1,22 +1,24 @@
 {
   "name": "game",
   "version": "1.0.0",
-  "description": "game from rainingchain youtube",
-  "main": "app.js",
-  "dependencies": {
-    "npm": "*",
-    "express": "*",
-    "socket.io": "*",
-    "promised-mongo": "*"
-  },
+  "description": "A multiplayer game inspired by rainingchain youtube tutorial.",
   "engines": {
     "node": "*",
     "npm": "*"
   },
-  "devDependencies": {},
+  "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*",
+    "promised-mongo": "*"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tdiede/boomboomgame.git"
   },
   "author": "Therese Diede",
   "license": "ISC"

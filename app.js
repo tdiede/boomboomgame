@@ -7,8 +7,8 @@ db.createCollection("account");
 db.createCollection("progress");
 */
 
-var connectionString = 'mongodb://localhost:27017/myGame';
-var collections = ['account','progress'];
+// var connectionString = 'mongodb://localhost:27017/myGame';
+// var collections = ['account','progress'];
 var pmongo = require('promised-mongo');
 var db = process.env.MONGODB_URI;  // pmongo(connectionString, collections);
 
