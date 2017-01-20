@@ -10,7 +10,7 @@ db.createCollection("progress");
 var connectionString = 'mongodb://localhost:27017/myGame';
 var collections = ['account','progress'];
 var pmongo = require('promised-mongo');
-var db = pmongo(connectionString, collections);
+var db = null;  // pmongo(connectionString, collections);
 
 
 // file communication => express
@@ -25,8 +25,10 @@ app.get('/', function(req,res) {
 
 app.use('/client', express.static(__dirname + '/client'));
 
-server.listen(2000);
-console.log('Server on port 2000...');
+// server.listen(2000);
+// console.log('Server on port 2000...');
+serv.listen(process.env.PORT);
+console.log('Server started...');
 
 
 var SOCKET_LIST = {};
