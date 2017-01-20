@@ -7,11 +7,14 @@ db.createCollection("account");
 db.createCollection("progress");
 */
 
-var connectionString = process.env.MONGODB_URI.toString();  // 'mongodb://localhost:27017/myGame';
+var uri = process.env.MONGODB_URI;
+var connectionString = uri.toString();  // 'mongodb://localhost:27017/myGame';
 var collections = ['account','progress'];
+
 var pmongo = require('promised-mongo');
 var db = pmongo(connectionString, collections);
-console.log(db);
+
+
 
 // file communication => express
 // client asks server for file
@@ -25,7 +28,8 @@ app.get('/', function(req,res) {
 
 app.use('/client', express.static(__dirname + '/client'));
 
-server.listen(process.env.PORT || 2000);
+var port = process.env.PORT;
+server.listen(port || 2000);
 console.log('Server started...');
 
 
