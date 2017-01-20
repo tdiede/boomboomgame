@@ -4,13 +4,13 @@
   "description": "game from rainingchain youtube",
   "main": "app.js",
   "dependencies": {
+    "npm": "*",
     "express": "*",
     "socket.io": "*",
     "promised-mongo": "*"
   },
   "engines": {
-    "node": "*",
-    "npm": "*"
+    "node": "*"
   },
   "devDependencies": {},
   "scripts": {
