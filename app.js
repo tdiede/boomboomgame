@@ -235,7 +235,7 @@ Bullet.update = function() {
 
 
 
-var DEBUG = true;
+var DEBUG = false;
 
 
 
