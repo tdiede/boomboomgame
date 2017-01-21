@@ -13,6 +13,7 @@ var collections = ['account','progress'];
 var pmongo = require('promised-mongo');
 var db = pmongo(connectionString, collections);
 
+db.account.insert({username:'test_user',password:'password'});
 
 
 // file communication => express
