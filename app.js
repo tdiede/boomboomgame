@@ -14,12 +14,12 @@ var collections = ['account','progress'];
 
 var pmongo = require('promised-mongo');
 var db = pmongo(connectionString, collections);
-            // .then((db) => {
-            //     console.log("Database connection ready...", db);
-            //     db.account.insert({username:'test_user',password:'password'});
-            // }).catch(error) => {
-            //     console.log("Error connecting database...", error);
-            // });
+            .then((db) => {
+                console.log("Database connection ready...", db);
+                db.account.insert({username:'test_user',password:'password'});
+            }).catch(error) => {
+                console.log("Error connecting database...", error);
+            });
 
 
 
