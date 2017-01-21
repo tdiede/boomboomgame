@@ -13,7 +13,7 @@ var connectionString = 'mongodb://admin:123@ds117829.mlab.com:17829/heroku_zsl5b
 var collections = ['account','progress'];
 
 var pmongo = require('promised-mongo');
-var db = pmongo(connectionString, collections, function(error) {
+var db = pmongo(connectionString, function(error) {
     if(error) {
         console.log("error");
     } else {
