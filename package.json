@@ -11,9 +11,9 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "*",
-    "socket.io": "*",
-    "promised-mongo": "*"
+    "express": "4.14.0",
+    "promised-mongo": "1.2.0",
+    "socket.io": "1.7.2"
   },
   "devDependencies": {},
   "repository": {
