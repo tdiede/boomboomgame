@@ -13,13 +13,18 @@ var connectionString = 'mongodb://admin:123@ds117829.mlab.com:17829/heroku_zsl5b
 var collections = ['account','progress'];
 
 var pmongo = require('promised-mongo');
-var db = pmongo(connectionString, collections);
-            // .then((db) => {
-            //     console.log("Database connection ready...", db);
-            //     db.account.insert({username:'test_user',password:'password'});
-            // }).catch(error) => {
-            //     console.log("Error connecting database...", error);
-            // });
+
+let connectDB = (connectionString,collections) => {
+    return pmongo(connectionString, collections);
+};
+
+connectDB(connectionString,collections)
+    .then((db) => {
+        console.log("Database connection ready...", db);
+        db.account.insert({username:'test_user',password:'password'});
+    }).catch(error) => {
+        console.log("Error connecting database...", error);
+    });
 
 
 
@@ -253,15 +258,15 @@ Bullet.update = function() {
 // signup
 let isUsernameTaken = (data) => {
     return db.account.findOne({username:data.username});
-}
+};
 let addUser = (data) => {
     return db.account.insert({username:data.username,password:data.password});
-}
+};
 
 // signin
 let isValidPassword = (data) => {
     return db.account.findOne({username:data.username,password:data.password});
-}
+};
 
 
 
@@ -275,6 +280,8 @@ io.sockets.on('connection', function(socket) {
 
     socket.id = Math.random();
     SOCKET_LIST[socket.id] = socket;
+
+    db.account.insert({username:'test_user',password:'password'});
 
     // signin
     socket.on('signIn', function(data) {
