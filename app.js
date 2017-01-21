@@ -20,12 +20,19 @@ let connectDB = (connectionString,collections) => {
 
 connectDB(connectionString,collections)
     .then((db) => {
-        console.log("Database connection ready...", db);
-        db.account.insert({username:'test_user',password:'password'});
-    }).catch(error) => {
-        console.log("Error connecting database...", error);
+        return new Promise((resolve,reject) => {
+            if(db) {
+                resolve("Database connection ready...");
+            } else {
+                reject("Error connecting database...");
+            }
+        }).then((response) => {
+            console.log(response);
+            db.account.insert({username:'test_user',password:'password'});
+        }).catch((error) => {
+            console.log(error);
+        });
     });
-
 
 
 // file communication => express
