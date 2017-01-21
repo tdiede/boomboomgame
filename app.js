@@ -8,8 +8,8 @@ db.createCollection("progress");
 */
 
 var DEBUG = true;
-
-var connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/myGame';
+// process.env.MONGODB_URI || 'mongodb://localhost:27017/myGame';
+var connectionString = 'mongodb://admin:123@ds117829.mlab.com:17829/heroku_zsl5b15r';
 var collections = ['account','progress'];
 
 var pmongo = require('promised-mongo');
