@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A multiplayer game inspired by rainingchain youtube tutorial.",
   "engines": {
-    "node": "*",
-    "npm": "*"
+    "node": "7.4.0",
+    "npm": "4.1.1"
   },
   "main": "app.js",
   "scripts": {
